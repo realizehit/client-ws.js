@@ -1,6 +1,6 @@
-# realizehit-websocket-js-client
+# realizehit-socket-js-client
 
-realizehit websocket client for Javascript
+realizehit socket client for Javascript
 
 NOTE: can be used on *nodejs*, *io.js* and *browsers*.
 
@@ -11,7 +11,7 @@ NOTE: can be used on *nodejs*, *io.js* and *browsers*.
 ### npm
 
 ```bash
-npm i --save realizehit-websocket-js-client
+npm i --save realizehit-socket-js-client
 ```
 
 ####
@@ -20,7 +20,7 @@ npm i --save realizehit-websocket-js-client
 
 ```js
 
-var RealizeHit = require( 'realizehit-websocket-js-client' );
+var RealizeHit = require( 'realizehit-socket-js-client' );
 
 var realizehit = new RealizeHit({
         endpoint: 'server-or-lb.example.com',
