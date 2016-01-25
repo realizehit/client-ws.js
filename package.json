@@ -24,5 +24,15 @@
   "bugs": {
     "url": "https://github.com/realizehit/client-ws.js/issues"
   },
-  "homepage": "https://github.com/realizehit/client-ws.js#readme"
+  "homepage": "https://github.com/realizehit/client-ws.js#readme",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "jshint": "^2.9.1",
+    "mocha": "^2.3.4",
+    "realizehit-server-ws": "^0.3.0"
+  },
+  "dependencies": {
+    "engine.io-client": "^1.6.7",
+    "realizehit-subscription": "^0.1.3"
+  }
 }
