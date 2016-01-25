@@ -1,38 +1,51 @@
-# realizehit-socket-js-client
+# realizehit-client-ws [![Build Status](https://travis-ci.org/realizehit/client-ws.js.svg?branch=master)](https://travis-ci.org/realizehit/client-ws.js)
 
-realizehit socket client for Javascript
-
-NOTE: can be used on *nodejs*, *io.js* and *browsers*.
-
-
-
-## Installation
-
-### npm
-
-```bash
-npm i --save realizehit-socket-js-client
-```
-
-####
+realizehit WS Client
 
 ## Usage
 
-```js
+#### Run as NPM module
 
-var RealizeHit = require( 'realizehit-socket-js-client' );
+```bash
+npm i -g realizehit-client-ws
+```
 
-var realizehit = new RealizeHit({
-        endpoint: 'server-or-lb.example.com',
-    });
+```javascript
+var WSClient = require( 'realizehit-client-ws' )
+var client = new WSClient( 'ws://realizehit.example.com/' )
+
+// Publish something cool
+client.subscribe({ kind: 'news', channel: 'CNN' })
+    .on( 'subscribed', function () {
+        console.log( 'yolo!!1' )
+    })
+    .on( 'payload', function ( payload ) {
+        console.log( payload ) // will log payloads from channel:CNN|kind:news
+    })
+    .on( 'unsubscribed', function () {
+        console.log( 'ohno!!1' )
+    })
+
+// Save subscription instead of chaining
+var subscription = client.subscribe({ foo: 'bar' })
+
+if ( subscription.subscribing() ) {
+    subscription.once( 'subscribed', function () {
+        subscription.unsubscribe()
+    })
+}
 
 ```
 
-We believe that we should not being trapped on `channel/event` approach like
-*Pusher* is, so we adopted for an **your app, your rules** approach.
+#### Run from the command-line (WIP)
 
+Not developed, just an idea, want to develop it?
 
+## Contributing
 
-### Subscribing
-
-You could
+```bash
+git clone https://github.com/realizehit/client-ws.js.git
+cd client-ws.js
+npm install
+npm test
+```
