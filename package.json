@@ -1,6 +1,6 @@
 {
   "name": "realizehit-client-ws",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "realizehit ws client",
   "main": "src/client.js",
   "scripts": {
