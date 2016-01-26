@@ -40,7 +40,13 @@ function WSClient ( options ) {
         path: options.path
     })
 
+    var SubPayRegExp = new RegExp( '^[a-zA-Z0-9]*\\'+ options.subpayJoinerChar )
     engine.on( 'message', function ( subpay ) {
+        // If this isnt a subpay, return
+        if ( ! subpay.match( SubPayRegExp ) ) {
+            return
+        }
+
         // Split sub id and payload
         var subpaySplit = subpay.split( self.options.subpayJoinerChar, 2 )
         var _id = subpaySplit[ 0 ]
