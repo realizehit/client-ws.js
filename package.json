@@ -26,7 +26,6 @@
   },
   "homepage": "https://github.com/realizehit/client-ws.js#readme",
   "devDependencies": {
-    "bluebird": "^3.1.4",
     "chai": "^3.4.1",
     "jshint": "^2.9.1",
     "mocha": "^2.3.4",
@@ -34,6 +33,7 @@
     "realizehit-server-ws": "^0.3.3"
   },
   "dependencies": {
+    "bluebird": "^3.1.5",
     "debug": "^2.2.0",
     "engine.io-client": "^1.6.7",
     "object-assign": "^4.0.1",
